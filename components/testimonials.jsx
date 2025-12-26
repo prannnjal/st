@@ -1,41 +1,26 @@
 export default function Testimonials() {
   const testimonials = [
     {
-      name: "Vikak Yadav",
+      name: "Parents of Arya Das",
       content:
         "The school is an excellent endeavour. It is well planned and they have a good balance between academics and extra curricular activities. The teachers are well trained and extremely approachable. A little far from my home but still manageable.",
-      initials: "VY",
+      initials: "AD",
+      childInfo: "Standard 3",
     },
     {
-      name: "Vishal Ranjan Sahai",
+      name: "Parents of Sagnik Naity",
       content:
         "It has been a wonderful day with kids performing the cultures of different states of India. My son represented India beautifully. Overall it was a great experience with outstanding event management!",
-      initials: "VR",
+      initials: "SN",
+      childInfo: "Standard 4",
     },
     {
-      name: "Rachna Srivastav",
-      content:
-        "Birla OpenMinds provides a good learning environment by including various activities into their curriculum. The focus on giving values contributes to a positive educational atmosphere. The well-designed infrastructure is commendable!",
-      initials: "RS",
+      name: "Parents of Soumendu Das",
+      content: "Great experience! The school creates a child-friendly setting with infrastructure that supports different learning modalities and curriculum. They maintain traditional Indian values while fostering an international perspective.",
+      initials: "SD",
+      childInfo: "Standard 6",
     },
-    {
-      name: "Niharika Awasthi",
-      content:
-        "The school is designed to ensure an engaging, appealing and child-friendly setting. The infrastructure is in sync with different learning modalities. They preserve traditional values while taking an international-minded approach.",
-      initials: "NA",
-    },
-    {
-      name: "Shatrughan Singh",
-      content:
-        "Great experience! The school creates a child-friendly setting with infrastructure that supports different learning modalities and curriculum. They maintain traditional Indian values while fostering an international perspective.",
-      initials: "SS",
-    },
-    {
-      name: "Divyansh Sharma",
-      content:
-        "Outstanding commitment to academic excellence and holistic growth. The dedicated faculty foster a nurturing environment. The well-rounded curriculum coupled with modern facilities ensures quality education.",
-      initials: "DS",
-    },
+   
   ]
 
   return (
@@ -52,14 +37,18 @@ export default function Testimonials() {
               key={idx}
               className="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition border-t-4 border-blue-600"
             >
-              <p className="text-gray-700 mb-6 italic leading-relaxed">"{testimonial.content}"</p>
+              {testimonial.content && (
+                <p className="text-gray-700 mb-6 italic leading-relaxed">"{testimonial.content}"</p>
+              )}
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center text-white font-bold">
                   {testimonial.initials}
                 </div>
                 <div>
                   <h4 className="font-bold text-gray-900">{testimonial.name}</h4>
-                  <p className="text-sm text-gray-600">Parent</p>
+                  <p className="text-sm text-gray-600">
+                    {testimonial.childInfo ? ` - ${testimonial.childInfo}` : ""}
+                  </p>
                 </div>
               </div>
             </div>

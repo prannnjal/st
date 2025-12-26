@@ -38,7 +38,7 @@ export default function Header() {
               className="h-14 w-auto object-contain"
             />
             <div>
-              <h1 className="text-2xl font-bold text-white drop-shadow-lg">AEON School</h1>
+              <h1 className="text-2xl font-bold text-white drop-shadow-lg">AEON Public School</h1>
               <p className="text-xs text-white/90 font-semibold">Learn • Play • Grow</p>
             </div>
           </Link>

@@ -1,32 +1,47 @@
 export default function Teachers() {
   const teachers = [
     {
-      name: "Anamika Pathak",
+      name: "Somdutta Gana",
       role: "Senior Teacher",
       specialty: "Early Childhood Education",
     },
     {
-      name: "Deepika Mathur",
+      name: "Bulbul Das",
       role: "Teacher",
       specialty: "Academic Development",
     },
     {
-      name: "Reeta Dubey",
+      name: "Arpita Devsharma",
       role: "Teacher",
       specialty: "STEM & Creative Learning",
     },
     {
-      name: "Soumyasree Nair",
+      name: "Ranita Agasti",
+      role: "Teacher",
+      specialty: "STEM & Creative Learning",
+    },
+    {
+      name: "Gapamala Mahapatra",
       role: "Teacher",
       specialty: "Holistic Development",
     },
     {
-      name: "Priya Singh",
+      name: "Munmun Das Gana",
+      role: "Teacher",
+      specialty: "Holistic Development",
+    },
+    {
+      name: "Mangal Maity",
       role: "Teacher",
       specialty: "Sports & PE",
     },
     {
-      name: "Meera Sharma",
+      name: "Pallabi Das",
+      role: "Teacher",
+      specialty: "Arts & Expression",
+    },
+    {
+      name: "Silpa Mandal",
       role: "Teacher",
       specialty: "Arts & Expression",
     },
