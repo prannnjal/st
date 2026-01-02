@@ -2,32 +2,32 @@ export default function Teachers() {
   const teachers = [
     {
       name: "Somdutta Gana",
-      role: "Senior Teacher",
+      role: "Vice Principal ",
       specialty: "Early Childhood Education",
     },
     {
       name: "Bulbul Das",
-      role: "Teacher",
+      role: "Coordinator",
       specialty: "Academic Development",
     },
     {
       name: "Arpita Devsharma",
-      role: "Teacher",
+      role: "Asst.Teacher",
       specialty: "STEM & Creative Learning",
     },
     {
       name: "Ranita Agasti",
-      role: "Teacher",
+      role: "Asst.Teacher",
       specialty: "STEM & Creative Learning",
     },
     {
       name: "Gapamala Mahapatra",
-      role: "Teacher",
+      role: "Asst.Teacher",
       specialty: "Holistic Development",
     },
     {
       name: "Munmun Das Gana",
-      role: "Teacher",
+      role: "Asst.Teacher",
       specialty: "Holistic Development",
     },
     {
@@ -41,7 +41,7 @@ export default function Teachers() {
       specialty: "Arts & Expression",
     },
     {
-      name: "Silpa Mandal",
+      name: "Shilpa Mandal",
       role: "Teacher",
       specialty: "Arts & Expression",
     },
