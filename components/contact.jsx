@@ -39,7 +39,7 @@ export default function Contact() {
               <div>
                 <h3 className="font-bold text-gray-900 mb-2">Email</h3>
                 <a href="mailto:info@apswb.in" className="text-gray-700 hover:text-pink-500">
-                  info@apswb.in
+                  aeon.aps@gmail.com
                 </a>
               </div>
             </div>
@@ -49,7 +49,7 @@ export default function Contact() {
               <div>
                 <h3 className="font-bold text-gray-900 mb-2">Call Us</h3>
                 <a href="tel:+919876543210" className="text-gray-700 hover:text-pink-500">
-                  +91 9876 543 210
+                  +91 9732555080
                 </a>
               </div>
             </div>
@@ -59,7 +59,7 @@ export default function Contact() {
               <div>
                 <h3 className="font-bold text-gray-900 mb-2">Location</h3>
                 <p className="text-gray-700">
-                  Reyapara Palai More
+                  Reapara Palai More
                   <br />
                   Nandigram
                 </p>

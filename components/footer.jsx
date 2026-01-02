@@ -118,19 +118,19 @@ export default function Footer() {
               <li>
                 <a href="mailto:info@apswb.in" className="hover:text-white transition flex items-center gap-2">
                   <span>📧</span>
-                  info@apswb.in
+                   aeon.aps@gmail.com
                 </a>
               </li>
               <li>
-                <a href="tel:+919876543210" className="hover:text-white transition flex items-center gap-2">
+                <a href="tel:+919732555080" className="hover:text-white transition flex items-center gap-2">
                   <span>📞</span>
-                  +91 9876 543 210
+                  +91  9732555080
                 </a>
               </li>
               <li className="flex items-start gap-2">
                 <span>📍</span>
                 <div>
-                  <p>Reyapara Palai More</p>
+                  <p>Reapara Palai More</p>
                   <p>Nandigram</p>
                 </div>
               </li>

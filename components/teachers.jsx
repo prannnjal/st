@@ -1,7 +1,7 @@
 export default function Teachers() {
   const teachers = [
     {
-      name: "Somdutta Gana",
+      name: "Somdutta Jana",
       role: "Vice Principal ",
       specialty: "Early Childhood Education",
     },
@@ -21,12 +21,12 @@ export default function Teachers() {
       specialty: "STEM & Creative Learning",
     },
     {
-      name: "Gapamala Mahapatra",
+      name: "Japamala Mahapatra",
       role: "Asst.Teacher",
       specialty: "Holistic Development",
     },
     {
-      name: "Munmun Das Gana",
+      name: "Munmun Das Jana",
       role: "Asst.Teacher",
       specialty: "Holistic Development",
     },
