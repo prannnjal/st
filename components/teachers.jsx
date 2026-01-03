@@ -45,6 +45,81 @@ export default function Teachers() {
       role: "Teacher",
       specialty: "Arts & Expression",
     },
+    {
+      name: "Januka Das Paul",
+      role: "DanceTeacher",
+      specialty: "Arts & Expression",
+    },
+    {
+      name: "Sabila Garjish",
+      role: "Asst.Teacher",
+      specialty: "Arts & Expression",
+    },
+    {
+      name: "Shreya Maity",
+      role: "Asst.Teacher",
+      specialty: "Arts & Expression",
+    },
+    {
+      name: "Hasina Khatun",
+      role: "Asst.Teacher",
+      specialty: "Arts & Expression",
+    },
+    {
+      name: "Somashree Sahoo",
+      role: "Astt.Teacher",
+      specialty: "Arts & Expression",
+    },
+    {
+      name: "Kalyan Bhattacharya",
+      role: "Asst.Teacher",
+      specialty: "Arts & Expression",
+    },
+    {
+      name: "Swarnasri Bera",
+      role: "Asst.Teacher",
+      specialty: "Arts & Expression",
+    },
+    {
+      name: "Amit Panda",
+      role: "Asst.Teacher",
+      specialty: "Arts & Expression",
+    },
+    {
+      name: "Sahidul Islam",
+      role: "Asst.Teacher",
+      specialty: "Arts & Expression",
+    },
+    {
+      name: "Arjit Maity",
+      role: "Asst.Teacher",
+      specialty: "Arts & Expression",
+    },
+    {
+      name: "Ushashi Tripathy",
+      role: "Asst.Teacher",
+      specialty: "Arts & Expression",
+    },
+    {
+      name: "Sajal Pradhan",
+      role: "Asst.Teacher",
+      specialty: "Arts & Expression",
+    },
+    {
+      name: "Sudipta Bera",
+      role: "Asst.Teacher",
+      specialty: "Arts & Expression",
+    },
+    {
+      name: "Madhunuita Maity",
+      role: "Asst.Teacher",
+      specialty: "Arts & Expression",
+    },
+    {
+      name: "Sabyasachi Bhunia",
+      role: "Asst.Teacher",
+      specialty: "Arts & Expression",
+    },
   ]
 
   return (
