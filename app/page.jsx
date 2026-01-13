@@ -4,8 +4,7 @@ import About from "@/components/about"
 import Facilities from "@/components/facilities"
 import Classes from "@/components/classes"
 import CTA from "@/components/cta"
-import Testimonials from "@/components/testimonials"
-import Teachers from "@/components/teachers"
+
 import Blog from "@/components/blog"
 import Gallery from "@/components/gallery"
 import Campus from "@/components/campus"
@@ -21,8 +20,7 @@ export default function Home() {
       <Facilities />
       <Classes />
       <CTA />
-      <Testimonials />
-      <Teachers />
+
       <Campus />
       <Blog />
       <Gallery />

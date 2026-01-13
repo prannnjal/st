@@ -1,125 +1,125 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { ChevronDown } from "lucide-react"
+import { ChevronDown, ArrowRight, Star } from "lucide-react"
 
 export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0)
-
-  const slides = [
-    {
-      title: "Welcome to AEON Public School",
-      subtitle: "Where Learning Becomes an Adventure! 🎨✨",
-      cta: "Explore Now",
-      gradient: "from-orange-400 via-pink-400 to-red-400",
-    },
-    {
-      title: "Play, Learn & Grow Together",
-      subtitle: "Creating memories and building futures",
-      cta: "Book a Visit",
-      gradient: "from-purple-400 via-pink-400 to-blue-400",
-    },
-    {
-      title: "World-Class Fun & Learning",
-      subtitle: "Quality education with endless possibilities",
-      cta: "See Our Programs",
-      gradient: "from-green-400 via-teal-400 to-blue-400",
-    },
-    {
-      title: "Your Child's Best Day Starts Here",
-      subtitle: "Safe, happy, and full of learning",
-      cta: "Join Us!",
-      gradient: "from-yellow-400 via-orange-400 to-pink-400",
-    },
-  ]
+  const [isLoaded, setIsLoaded] = useState(false)
 
   useEffect(() => {
+    setIsLoaded(true)
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length)
-    }, 5000)
+    }, 6000)
     return () => clearInterval(interval)
   }, [])
 
+  const slides = [
+    {
+      title: "Welcome to Sant Paul High School",
+      subtitle: "Where Excellence Meets Education. Nurturing Tomorrow's Leaders Today. ✨",
+      cta: "Explore Our Campus",
+      image: "/abs/WhatsApp Image 2026-01-13 at 12.33.24 PM.jpeg",
+      gradient: "from-primary/90 to-purple-900/90",
+    },
+    {
+      title: "Empowering Young Minds",
+      subtitle: "A Holisitic Approach to Learning, Creativity, and Character Building.",
+      cta: "Admissions Open",
+      image: "/abs/WhatsApp Image 2026-01-13 at 12.41.25 PM.jpeg", // Keeping existing valid path if available, else fallback
+      gradient: "from-secondary/90 to-pink-900/90",
+    },
+    {
+      title: "World-Class Infrastructure",
+      subtitle: "State-of-the-art Labs, Smart Classrooms & Safe Environment.",
+      cta: "View Facilities",
+      image: "/abs/WhatsApp Image 2026-01-13 at 12.39.52 PM.jpeg",
+      gradient: "from-blue-600/90 to-primary/90",
+    },
+  ]
+
   return (
-    <section className="pt-20 min-h-screen relative overflow-hidden">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: "url('/abs/IMG_20241001_122645.jpg')"
-        }}
-      >
-        <div className="absolute inset-0 bg-black/40"></div>
-      </div>
-      
-      <div className="relative w-full h-full min-h-screen flex items-center justify-center">
-        {slides.map((slide, idx) => (
-          <div
-            key={idx}
-            className={`absolute inset-0 transition-opacity duration-1000 flex items-center justify-center ${
-              idx === currentSlide ? "opacity-100" : "opacity-0"
+    <section className="relative h-screen min-h-[600px] overflow-hidden flex items-center justify-center">
+      {/* Background Slideshow */}
+      {slides.map((slide, idx) => (
+        <div
+          key={idx}
+          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${idx === currentSlide ? "opacity-100" : "opacity-0"
             }`}
-          >
-            <div
-              className="absolute top-12 left-8 w-32 h-20 bg-white rounded-full opacity-70 animate-float-left"
-              style={{
-                boxShadow: "-20px 0 0 -5px white, 20px 0 0 -5px white, -40px 0 0 -10px white",
-              }}
-            ></div>
+        >
+          {/* Image Layer */}
+          <div
+            className="absolute inset-0 bg-cover bg-center transition-transform duration-[10000ms] ease-out transform scale-110"
+            style={{
+              backgroundImage: `url('${slide.image}')`,
+              transform: idx === currentSlide ? "scale(100%)" : "scale(110%)"
+            }}
+          ></div>
 
-            <div
-              className="absolute top-1/4 right-12 w-40 h-24 bg-white rounded-full opacity-60 animate-float-right"
-              style={{
-                boxShadow: "-25px 0 0 -8px white, 25px 0 0 -8px white, -50px 0 0 -12px white",
-              }}
-            ></div>
+          {/* Gradient Overlay */}
+          <div className={`absolute inset-0 bg-gradient-to-br ${slide.gradient} mix-blend-multiply opacity-80`}></div>
+          <div className="absolute inset-0 bg-black/20"></div>
+        </div>
+      ))}
 
-            <div className="absolute bottom-32 left-1/4 w-20 h-20 bg-white rounded-full opacity-50 animate-bounce-slow"></div>
-            <div className="absolute bottom-24 right-1/3 w-16 h-16 bg-white rounded-full opacity-40 animate-wobble"></div>
-            <div className="absolute top-1/3 left-1/3 w-12 h-12 bg-yellow-200 rounded-full opacity-60 animate-pulse-glow"></div>
-
-            <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
-              <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight text-balance drop-shadow-lg">
-                {slide.title}
-              </h1>
-              <p className="text-xl md:text-2xl mb-10 font-semibold opacity-95 drop-shadow-md text-balance">
-                {slide.subtitle}
-              </p>
-            </div>
+      {/* Content */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20">
+        <div className={`transition-all duration-1000 transform ${isLoaded ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8 animate-float">
+            <Star className="text-accent w-4 h-4 fill-accent" />
+            <span className="text-sm font-semibold text-white tracking-wide uppercase">Admissions Open for 2025-2026</span>
+            <Star className="text-accent w-4 h-4 fill-accent" />
           </div>
+
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-8 tracking-tight drop-shadow-xl leading-tight">
+            {slides[currentSlide].title}
+          </h1>
+
+          <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-3xl mx-auto font-medium leading-relaxed drop-shadow-md">
+            {slides[currentSlide].subtitle}
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <a
+              href="#contact"
+              className="group relative px-8 py-4 bg-secondary text-white rounded-full font-bold text-lg shadow-[0_0_20px_rgba(236,72,153,0.5)] hover:shadow-[0_0_30px_rgba(236,72,153,0.8)] hover:scale-105 transition-all duration-300 overflow-hidden"
+            >
+              <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+              <span className="relative flex items-center gap-2">
+                {slides[currentSlide].cta} <ArrowRight className="w-5 h-5" />
+              </span>
+            </a>
+
+            <a
+              href="#about"
+              className="px-8 py-4 glass text-white rounded-full font-bold text-lg hover:bg-white/20 transition-all duration-300 hover:scale-105 backdrop-blur-md"
+            >
+              Learn More
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Slide Indicators */}
+      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex gap-4 z-20">
+        {slides.map((_, idx) => (
+          <button
+            key={idx}
+            onClick={() => setCurrentSlide(idx)}
+            className={`transition-all duration-500 rounded-full ${idx === currentSlide
+              ? "w-12 h-3 bg-accent shadow-[0_0_10px_rgba(255,255,255,0.8)]"
+              : "w-3 h-3 bg-white/40 hover:bg-white/60"
+              }`}
+            aria-label={`Go to slide ${idx + 1}`}
+          />
         ))}
       </div>
 
-      {/* Footer with button, indicators, and scroll */}
-      <div className="absolute bottom-0 left-0 right-0 pb-8 z-10">
-        <div className="flex flex-col items-center gap-4">
-          {/* CTA Button */}
-          <div className="transition-opacity duration-500">
-            <a
-              href="#contact"
-              className="inline-block bg-pink-500 text-white px-10 py-4 rounded-full hover:scale-110 transition-transform font-bold text-lg shadow-xl hover:shadow-2xl"
-            >
-              {slides[currentSlide].cta}
-            </a>
-          </div>
-          
-          {/* Slide indicators */}
-          <div className="flex gap-3">
-            {slides.map((_, idx) => (
-              <button
-                key={idx}
-                onClick={() => setCurrentSlide(idx)}
-                className={`transition-all duration-300 rounded-full hover:scale-125 ${
-                  idx === currentSlide ? "bg-white w-12 h-4 shadow-lg" : "bg-white/40 w-3 h-3 hover:bg-white/60"
-                }`}
-              />
-            ))}
-          </div>
-
-          {/* Scroll indicator */}
-          <div className="animate-bounce">
-            <ChevronDown className="text-white" size={32} />
-          </div>
+      {/* Scroll Down Hint */}
+      <div className="absolute bottom-8 right-8 z-20 animate-bounce-slow hidden md:block">
+        <div className="glass p-3 rounded-full text-white/80">
+          <ChevronDown size={24} />
         </div>
       </div>
     </section>

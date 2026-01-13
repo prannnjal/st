@@ -1,17 +1,19 @@
 "use client"
 
 import { useState } from "react"
+import { ChevronDown, Star, Sparkles, BookOpen, Rocket, Award } from "lucide-react"
 
 export default function Classes() {
   const [expandedClass, setExpandedClass] = useState(0)
 
   const classes = [
     {
-      grade: "🎨 Pre-Primary",
+      grade: "Pre-Primary",
       subtitle: "Nursery, LKG, UKG",
       ageGroup: "2.5 to 5.5 years",
       focus: "Play-based learning with colorful activities",
-      color: "from-pink-400 to-orange-400",
+      color: "from-pink-500 to-rose-400",
+      icon: <Sparkles className="w-6 h-6" />,
       highlights: [
         "Child-centric play-based curriculum",
         "Montessori-inspired methods",
@@ -21,11 +23,12 @@ export default function Classes() {
       ],
     },
     {
-      grade: "🚀 Grade 1",
-      subtitle: "",
+      grade: "Grade 1",
+      subtitle: "Foundational Years",
       ageGroup: "5.5 to 6.5 years",
       focus: "Structured learning with fun activities",
-      color: "from-blue-400 to-purple-400",
+      color: "from-blue-500 to-indigo-400",
+      icon: <Rocket className="w-6 h-6" />,
       highlights: [
         "Interactive & engaging teaching",
         "Low student-teacher ratio",
@@ -35,11 +38,12 @@ export default function Classes() {
       ],
     },
     {
-      grade: "🌟 Grade 2-3",
-      subtitle: "",
+      grade: "Grade 2-3",
+      subtitle: "Exploratory Years",
       ageGroup: "6.5 to 8.5 years",
       focus: "Critical thinking & project-based learning",
-      color: "from-green-400 to-teal-400",
+      color: "from-teal-500 to-emerald-400",
+      icon: <BookOpen className="w-6 h-6" />,
       highlights: [
         "STEAM integrated curriculum",
         "Creative inquiry-based learning",
@@ -49,11 +53,12 @@ export default function Classes() {
       ],
     },
     {
-      grade: "🎯 Grade 4-6",
-      subtitle: "",
+      grade: "Grade 4-6",
+      subtitle: "Growth Years",
       ageGroup: "8.5 to 11.5 years",
       focus: "Academic excellence & personality development",
-      color: "from-yellow-400 to-orange-400",
+      color: "from-amber-500 to-orange-400",
+      icon: <Award className="w-6 h-6" />,
       highlights: [
         "Concept-based real-world learning",
         "Leadership & communication skills",
@@ -65,28 +70,15 @@ export default function Classes() {
   ]
 
   return (
-    <section id="classes" className="py-20 relative overflow-hidden" style={{ background: 'linear-gradient(to bottom, rgba(56, 189, 248, 0.1), rgba(56, 189, 248, 0.05))' }}>
-      <div
-        className="absolute top-40 left-5 w-36 h-22 bg-white rounded-full opacity-40 animate-float-left"
-        style={{
-          boxShadow: "-25px 0 0 -7px white, 25px 0 0 -7px white",
-        }}
-      ></div>
-
-      <div
-        className="absolute bottom-20 right-8 w-44 h-26 bg-white rounded-full opacity-35 animate-float-right"
-        style={{
-          boxShadow: "-30px 0 0 -8px white, 30px 0 0 -8px white",
-        }}
-      ></div>
+    <section id="classes" className="py-24 relative overflow-hidden bg-slate-50">
+      <div className="absolute inset-0 bg-[url('/abs/grid-pattern.png')] opacity-5"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent mb-4" style={{ background: 'linear-gradient(to right, rgb(220, 154, 37), rgb(236, 72, 153), rgb(56, 189, 248))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-            Our Classes & Programs
-          </h2>
-          <p className="text-lg text-gray-700 max-w-3xl mx-auto font-semibold">
-            Specially designed programs for every age group from toddlers to 6th grade
+          <span className="text-secondary font-bold tracking-wider uppercase text-sm mb-2 block">Academic Excellence</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Our Classes & Programs</h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto font-medium">
+            Specially designed programs for every age group, fostering growth from toddlers to 6th grade.
           </p>
         </div>
 
@@ -95,40 +87,61 @@ export default function Classes() {
             <div
               key={idx}
               onClick={() => setExpandedClass(expandedClass === idx ? -1 : idx)}
-              className={`bg-gradient-to-r ${classItem.color} rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-300 cursor-pointer transform hover:scale-102 relative group`}
+              className={`group relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer border border-gray-100 ${expandedClass === idx ? 'ring-2 ring-primary/20' : ''}`}
             >
-              <div className="absolute -top-8 -right-8 w-40 h-28 bg-white/15 rounded-full blur-lg group-hover:blur-xl transition-all"></div>
+              <div className={`absolute top-0 left-0 w-2 h-full bg-gradient-to-b ${classItem.color}`}></div>
 
-              <div className="p-6 md:p-8 text-white relative z-10">
-                <div className="flex justify-between items-start">
-                  <div>
-                    <h3 className="text-3xl font-bold mb-2">{classItem.grade}</h3>
-                    <p className="text-white/90 mb-2 font-semibold">Age Group: {classItem.ageGroup}</p>
-                    <p className="text-white/85 font-medium">{classItem.focus}</p>
+              <div className="p-8 relative z-10">
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
+                  <div className="flex items-start gap-6">
+                    <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${classItem.color} flex items-center justify-center text-white shadow-md group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}>
+                      {classItem.icon}
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-gray-900 mb-1 group-hover:text-primary transition-colors">{classItem.grade}</h3>
+                      <p className="text-secondary font-semibold text-sm uppercase tracking-wide mb-1">{classItem.subtitle}</p>
+                      {expandedClass !== idx && (
+                        <p className="text-gray-500 text-sm font-medium">{classItem.focus}</p>
+                      )}
+                    </div>
                   </div>
-                  <div className={`transition-transform text-3xl ${expandedClass === idx ? "rotate-180" : ""}`}>▼</div>
+
+                  <div className="flex items-center gap-6">
+                    <div className="hidden md:block text-right">
+                      <p className="text-gray-900 font-bold">{classItem.ageGroup}</p>
+                      <p className="text-gray-500 text-sm">Age Group</p>
+                    </div>
+                    <div className={`w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center transition-transform duration-300 ${expandedClass === idx ? "rotate-180 bg-primary text-white" : "text-gray-600 group-hover:bg-primary/10 group-hover:text-primary"}`}>
+                      <ChevronDown className="w-5 h-5" />
+                    </div>
+                  </div>
                 </div>
 
-                {expandedClass === idx && (
-                  <div className="mt-6 pt-6 border-t border-white/30">
-                    <h4 className="font-bold text-lg mb-4">What Makes Us Special:</h4>
-                    <ul className="grid md:grid-cols-2 gap-3">
+                <div className={`grid transition-all duration-500 ease-in-out ${expandedClass === idx ? "grid-rows-[1fr] opacity-100 mt-8 pt-8 border-t border-gray-100" : "grid-rows-[0fr] opacity-0"}`}>
+                  <div className="overflow-hidden">
+                    <h4 className="font-bold text-lg mb-6 flex items-center gap-2">
+                      <Star className="w-5 h-5 text-accent fill-accent" />
+                      What Makes This Program Special
+                    </h4>
+                    <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-y-4 gap-x-8">
                       {classItem.highlights.map((highlight, i) => (
-                        <li key={i} className="flex gap-3">
-                          <span className="text-2xl flex-shrink-0">✨</span>
-                          <span className="font-semibold">{highlight}</span>
+                        <li key={i} className="flex gap-3 items-center">
+                          <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${classItem.color}`}></div>
+                          <span className="text-gray-700 font-medium">{highlight}</span>
                         </li>
                       ))}
                     </ul>
-                    <a
-                      href="#contact"
-                      className="inline-block mt-6 bg-white px-6 py-2 rounded-full font-bold hover:scale-110 transition-transform"
-                      style={{ color: 'rgb(220, 154, 37)' }}
-                    >
-                      Enroll Now
-                    </a>
+                    <div className="mt-8 flex justify-end">
+                      <a
+                        href="#contact"
+                        className={`inline-flex items-center justify-center px-8 py-3 rounded-full text-white font-bold bg-gradient-to-r ${classItem.color} shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300`}
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        Enroll Now
+                      </a>
+                    </div>
                   </div>
-                )}
+                </div>
               </div>
             </div>
           ))}

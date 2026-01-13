@@ -5,10 +5,10 @@ const geist = Geist({ subsets: ["latin"] })
 const geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata = {
-  title: "AEON Public School - Quality Education & Daycare (3 Months to 10 Years)",
+  title: "Sant Paul High School - Excellence in Education (Playgroup to High School)",
   description:
-    "AEON Public School provides world-class education and daycare for children aged 3 months to 10 years with modern infrastructure, expert teachers, and holistic development programs.",
-  keywords: "school, daycare, preschool, kindergarten, education, children, STEM, sports, arts, curriculum",
+    "Sant Paul High School provides world-class education with a focus on holistic development, academic excellence, and character building. Offering state-of-the-art facilities from Pre-Primary to High School levels.",
+  keywords: "Sant Paul High School, school, education, high school, matriculation, boarding, hostel, best school, Patepur, Vaishali",
   icons: {
     icon: "/abs/favicon.ico",
     shortcut: "/abs/favicon.ico",

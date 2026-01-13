@@ -1,56 +1,64 @@
 export default function Facilities() {
   const facilities = [
     {
-      title: "🏠 Cozy Classrooms",
-      description: "Warm, safe spaces designed like a home away from home",
-      color: "from-orange-300 to-red-300",
+      title: "👨‍🏫 Experienced Faculties",
+      description: "Dedicated, experienced and trained faculties from all over India",
+      color: "from-blue-500 to-indigo-500",
     },
     {
-      title: "🔒 Security First",
-      description: "24/7 CCTV & trained security for your child's safety",
-      color: "from-blue-300 to-cyan-300",
+      title: "💻 Digital Classrooms",
+      description: "Digital class for all students. Laboratories for all Core Subjects",
+      color: "from-purple-500 to-violet-500",
     },
     {
-      title: "👨‍🏫 Expert Teachers",
-      description: "Certified & trained educators passionate about kids",
-      color: "from-pink-300 to-rose-300",
+      title: "🤝 Focus on Slow Learners",
+      description: "Special focus on slow learners to ensure no child is left behind",
+      color: "from-green-500 to-emerald-500",
     },
     {
-      title: "🎮 Play & Learn",
-      description: "Interactive, fun learning through games & activities",
-      color: "from-green-300 to-emerald-300",
+      title: "🗣️ Fully English Campus",
+      description: "Immersive English environment for better communication skills",
+      color: "from-orange-500 to-amber-500",
     },
     {
-      title: "🚌 Safe Transport",
-      description: "GPS-enabled buses with trained attendants",
-      color: "from-yellow-300 to-amber-300",
+      title: "📹 360° Surveillance",
+      description: "360° CCTV Surveillance for complete safety and security",
+      color: "from-red-500 to-rose-500",
     },
     {
-      title: "🍎 Healthy Meals",
-      description: "Nutritious, hygienic meals for growing kids",
-      color: "from-purple-300 to-violet-300",
+      title: "🏫 Flexible Boarding",
+      description: "Day Scholar, Day Boarding and Hostel facilities available",
+      color: "from-pink-500 to-fuchsia-500",
     },
     {
-      title: "💪 Active Play",
-      description: "Sports grounds & playgrounds for physical development",
-      color: "from-red-300 to-pink-300",
+      title: "🪑 Spacious Classrooms",
+      description: "Limited number of students in a spacious Classroom for personal attention",
+      color: "from-cyan-500 to-sky-500",
     },
     {
-      title: "⚕️ Health Care",
-      description: "Regular check-ups & trained first aid staff",
-      color: "from-teal-300 to-cyan-300",
+      title: "🏆 Proven Results",
+      description: "100% Result in Matriculation Exam 2022",
+      color: "from-yellow-400 to-orange-400",
     },
   ]
 
   return (
-    <section id="facilities" className="py-20 bg-gradient-to-b from-purple-50 to-blue-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-green-500 via-blue-500 to-purple-500 bg-clip-text text-transparent mb-4">
-            Our Amazing Facilities
+    <section id="facilities" className="py-24 relative overflow-hidden bg-slate-50">
+      {/* Background decoration */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-30 pointer-events-none">
+        <div className="absolute top-10 right-10 w-64 h-64 bg-secondary/20 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-10 left-10 w-64 h-64 bg-primary/20 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center mb-20">
+          <span className="text-secondary font-bold tracking-wider uppercase text-sm mb-2 block">Our Infrastructure</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 relative inline-block">
+            Salient Features
+            <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-secondary to-accent rounded-full"></div>
           </h2>
-          <p className="text-lg text-gray-700 max-w-2xl mx-auto font-semibold">
-            Everything your child needs for a happy, safe & enriching school experience
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto font-medium">
+            World-class amenities designed to support your child's holistic development.
           </p>
         </div>
 
@@ -58,13 +66,21 @@ export default function Facilities() {
           {facilities.map((facility, idx) => (
             <div
               key={idx}
-              className={`bg-gradient-to-br ${facility.color} rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 cursor-pointer group`}
+              className="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 relative overflow-hidden"
             >
-              <div className="text-5xl mb-4 group-hover:rotate-12 transition-transform duration-300">
+              <div className={`absolute top-0 left-0 w-2 h-full bg-gradient-to-b ${facility.color}`}></div>
+
+              <div className="text-5xl mb-6 transform group-hover:scale-110 transition-transform duration-300">
                 {facility.title.split(" ")[0]}
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">{facility.title.split(" ").slice(1).join(" ")}</h3>
-              <p className="text-gray-800 font-semibold">{facility.description}</p>
+
+              <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
+                {facility.title.split(" ").slice(1).join(" ")}
+              </h3>
+
+              <p className="text-gray-600 leading-relaxed font-medium">
+                {facility.description}
+              </p>
             </div>
           ))}
         </div>

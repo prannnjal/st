@@ -13,7 +13,7 @@ export default function Header() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY
-      setIsScrolled(scrollPosition > 50)
+      setIsScrolled(scrollPosition > 20)
     }
 
     window.addEventListener('scroll', handleScroll)
@@ -21,148 +21,103 @@ export default function Header() {
   }, [])
 
   return (
-    <header 
-      className={`fixed w-full top-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'shadow-lg' : 'shadow-none'
-      }`}
-      style={{ 
-        backgroundColor: isScrolled ? 'rgb(220, 154, 37)' : 'transparent'
-      }}
+    <header
+      className={`fixed w-full top-0 z-50 transition-all duration-300 ${isScrolled ? 'glass py-2' : 'bg-transparent py-4'
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
-          <Link href="/" className="flex items-center gap-3">
-            <img 
-              src="/abs/logo.png" 
-              alt="AEON Public School Logo" 
-              className="h-14 w-auto object-contain"
-            />
+        <div className="flex justify-between items-center">
+          <Link href="/" className="flex items-center gap-3 group">
+            <div className="relative">
+              <div className="absolute inset-0 bg-white/20 blur-xl rounded-full group-hover:bg-white/30 transition-all"></div>
+              <img
+                src="/abs/logo.jpg"
+                alt="Sant Paul High School Logo"
+                className="h-16 w-auto object-contain relative z-10 drop-shadow-md"
+              />
+            </div>
             <div>
-              <h1 className="text-2xl font-bold text-white drop-shadow-lg">AEON Public School</h1>
-              <p className="text-xs text-white/90 font-semibold">Learn • Play • Grow</p>
+              <h1 className={`text-2xl font-bold drop-shadow-sm transition-colors duration-300 ${isScrolled ? 'text-primary' : 'text-white'}`}>
+                Sant Paul High School
+              </h1>
+              <p className={`text-xs font-semibold tracking-wider uppercase transition-colors duration-300 ${isScrolled ? 'text-primary/80' : 'text-white/90'}`}>
+                Learn • Play • Grow
+              </p>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex gap-1 items-center">
-            <Link
-              href="/about"
-              className="text-white font-bold px-4 py-2 rounded-full hover:bg-white/20 transition-all duration-300 text-sm"
-            >
-              About
-            </Link>
-            <Link
-              href="/programs"
-              className="text-white font-bold px-4 py-2 rounded-full hover:bg-white/20 transition-all duration-300 text-sm"
-            >
-              Programs
-            </Link>
-            <Link
-              href="/activities"
-              className="text-white font-bold px-4 py-2 rounded-full hover:bg-white/20 transition-all duration-300 text-sm"
-            >
-              Activities
-            </Link>
-            <Link
-              href="/teachers"
-              className="text-white font-bold px-4 py-2 rounded-full hover:bg-white/20 transition-all duration-300 text-sm"
-            >
-              Teachers
-            </Link>
-            <Link
-              href="/gallery"
-              className="text-white font-bold px-4 py-2 rounded-full hover:bg-white/20 transition-all duration-300 text-sm"
-            >
-              Gallery
-            </Link>
+          <nav className="hidden lg:flex gap-2 items-center">
+            {['About', 'Programs', 'Activities', 'Gallery', 'Contact'].map((item) => (
+              <Link
+                key={item}
+                href={`/${item.toLowerCase()}`}
+                className={`font-semibold px-4 py-2 rounded-full transition-all duration-300 text-sm ${isScrolled
+                    ? 'text-foreground hover:bg-primary/10 hover:text-primary'
+                    : 'text-white hover:bg-white/20'
+                  }`}
+              >
+                {item}
+              </Link>
+            ))}
+
             <Link
               href="/contact"
-              className="text-white font-bold px-4 py-2 rounded-full hover:bg-white/20 transition-all duration-300 text-sm"
-            >
-              Contact
-            </Link>
-            <Link 
-              href="/contact"
-              className="bg-pink-500 text-white px-6 py-2 rounded-full font-bold hover:shadow-lg transition-all duration-300 ml-2 hover:scale-105"
+              className="bg-secondary text-secondary-foreground px-6 py-2.5 rounded-full font-bold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 ml-2"
             >
               Enroll Now
             </Link>
-            <a 
+            <a
               href="https://octopod.co.in/student/admission/b6a895d7cb10f3166208e55d783c36d7"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-blue-600 text-white px-6 py-2 rounded-full font-bold hover:shadow-lg transition-all duration-300 ml-2 hover:scale-105"
+              className="bg-primary text-primary-foreground px-6 py-2.5 rounded-full font-bold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 ml-2"
             >
               Fees Payment
             </a>
           </nav>
 
           {/* Mobile menu button */}
-          <button onClick={toggleMenu} className="lg:hidden p-2">
-            {isOpen ? <X size={28} className="text-white" /> : <Menu size={28} className="text-white" />}
+          <button onClick={toggleMenu} className="lg:hidden p-2 rounded-full hover:bg-white/10 transition-colors">
+            {isOpen ?
+              <X size={28} className={isScrolled ? "text-primary" : "text-white"} /> :
+              <Menu size={28} className={isScrolled ? "text-primary" : "text-white"} />
+            }
           </button>
         </div>
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <nav 
-            className="lg:hidden pb-6 flex flex-col gap-3 border-t border-white/20 pt-4 transition-all duration-300" 
-            style={{ 
-              background: isScrolled 
-                ? 'linear-gradient(to bottom, transparent, rgba(56, 189, 248, 0.3))' 
-                : 'linear-gradient(to bottom, rgba(220, 154, 37, 0.95), rgba(56, 189, 248, 0.3))'
-            }}
+          <nav
+            className="lg:hidden mt-4 pb-6 flex flex-col gap-3 glass rounded-2xl p-4 animate-in slide-in-from-top-4 fade-in duration-300"
           >
-            <Link
-              href="/about"
-              className="text-white font-bold px-4 py-2 rounded-full hover:bg-white/20 transition-all"
-            >
-              About
-            </Link>
-            <Link
-              href="/programs"
-              className="text-white font-bold px-4 py-2 rounded-full hover:bg-white/20 transition-all"
-            >
-              Programs
-            </Link>
-            <Link
-              href="/activities"
-              className="text-white font-bold px-4 py-2 rounded-full hover:bg-white/20 transition-all"
-            >
-              Activities
-            </Link>
-            <Link
-              href="/teachers"
-              className="text-white font-bold px-4 py-2 rounded-full hover:bg-white/20 transition-all"
-            >
-              Teachers
-            </Link>
-            <Link
-              href="/gallery"
-              className="text-white font-bold px-4 py-2 rounded-full hover:bg-white/20 transition-all"
-            >
-              Gallery
-            </Link>
-            <Link
-              href="/contact"
-              className="text-white font-bold px-4 py-2 rounded-full hover:bg-white/20 transition-all"
-            >
-              Contact
-            </Link>
-            <Link 
-              href="/contact"
-              className="bg-pink-500 text-white px-6 py-2 rounded-full font-bold hover:shadow-lg transition-all mx-4 text-center"
-            >
-              Enroll Now
-            </Link>
-            <a 
-              href="https://octopod.co.in/student/admission/b6a895d7cb10f3166208e55d783c36d7"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-blue-600 text-white px-6 py-2 rounded-full font-bold hover:shadow-lg transition-all mx-4 text-center"
-            >
-              Fees Payment
-            </a>
+            {['About', 'Programs', 'Activities', 'Gallery', 'Contact'].map((item) => (
+              <Link
+                key={item}
+                href={`/${item.toLowerCase()}`}
+                className="text-foreground font-semibold px-4 py-3 rounded-xl hover:bg-primary/10 hover:text-primary transition-all"
+                onClick={() => setIsOpen(false)}
+              >
+                {item}
+              </Link>
+            ))}
+            <div className="flex flex-col gap-3 mt-2">
+              <Link
+                href="/contact"
+                className="bg-secondary text-secondary-foreground px-6 py-3 rounded-xl font-bold text-center shadow-md hover:shadow-lg transition-all"
+                onClick={() => setIsOpen(false)}
+              >
+                Enroll Now
+              </Link>
+              <a
+                href="https://octopod.co.in/student/admission/b6a895d7cb10f3166208e55d783c36d7"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-primary text-primary-foreground px-6 py-3 rounded-xl font-bold text-center shadow-md hover:shadow-lg transition-all"
+              >
+                Fees Payment
+              </a>
+            </div>
           </nav>
         )}
       </div>
