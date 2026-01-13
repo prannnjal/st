@@ -52,8 +52,8 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="font-bold text-lg mb-1 opacity-90">Email Us</h4>
-                  <a href="mailto:aeon.aps@gmail.com" className="text-white/80 hover:text-white transition-colors text-lg">
-                    aeon.aps@gmail.com
+                  <a href="mailto:info@stpaul.com" className="text-white/80 hover:text-white transition-colors text-lg">
+                    info@stpaul.com
                   </a>
                 </div>
               </div>

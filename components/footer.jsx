@@ -59,6 +59,20 @@ export default function Footer() {
                 </button>
               ))}
             </div>
+
+            <div className="mt-8 pt-6 border-t border-white/10">
+              <div className="flex items-center gap-4 bg-white/5 p-3 rounded-xl backdrop-blur-sm border border-white/5 hover:bg-white/10 transition-colors">
+                <img
+                  src="/abs/WhatsApp Image 2026-01-13 at 12.33.29 PM.jpeg"
+                  alt="ISO 9001:2015 Certified"
+                  className="h-12 w-auto object-contain rounded-md bg-white p-0.5"
+                />
+                <div className="text-xs text-white/90 font-bold leading-tight">
+                  <p className="text-secondary mb-0.5">ISO 9001:2015</p>
+                  <p>Certified Institution</p>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div>
@@ -93,11 +107,11 @@ export default function Footer() {
             <h4 className="font-bold mb-6 text-lg text-accent">Get In Touch</h4>
             <ul className="space-y-4">
               <li>
-                <a href="mailto:aeon.aps@gmail.com" className="group flex items-start gap-3 text-white/80 hover:text-white transition-all">
+                <a href="mailto:info@stpaul.com" className="group flex items-start gap-3 text-white/80 hover:text-white transition-all">
                   <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center group-hover:bg-secondary/80 transition-colors">
                     <span>📧</span>
                   </div>
-                  <span className="mt-1">aeon.aps@gmail.com</span>
+                  <span className="mt-1">info@stpaul.com</span>
                 </a>
               </li>
               <li>
@@ -134,6 +148,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-    </footer>
+    </footer >
   )
 }

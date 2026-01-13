@@ -22,14 +22,13 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed w-full top-0 z-50 transition-all duration-300 ${isScrolled ? 'glass py-2' : 'bg-transparent py-4'
-        }`}
+      className="fixed w-full top-0 z-50 transition-all duration-300 glass py-2"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <Link href="/" className="flex items-center gap-3 group">
             <div className="relative">
-              <div className="absolute inset-0 bg-white/20 blur-xl rounded-full group-hover:bg-white/30 transition-all"></div>
+              <div className="absolute inset-0 bg-primary/5 blur-xl rounded-full group-hover:bg-primary/10 transition-all"></div>
               <img
                 src="/abs/logo.jpg"
                 alt="Sant Paul High School Logo"
@@ -37,10 +36,10 @@ export default function Header() {
               />
             </div>
             <div>
-              <h1 className={`text-2xl font-bold drop-shadow-sm transition-colors duration-300 ${isScrolled ? 'text-primary' : 'text-white'}`}>
+              <h1 className="text-2xl font-bold drop-shadow-sm transition-colors duration-300 text-primary">
                 Sant Paul High School
               </h1>
-              <p className={`text-xs font-semibold tracking-wider uppercase transition-colors duration-300 ${isScrolled ? 'text-primary/80' : 'text-white/90'}`}>
+              <p className="text-xs font-semibold tracking-wider uppercase transition-colors duration-300 text-primary/80">
                 Learn • Play • Grow
               </p>
             </div>
@@ -52,10 +51,7 @@ export default function Header() {
               <Link
                 key={item}
                 href={`/${item.toLowerCase()}`}
-                className={`font-semibold px-4 py-2 rounded-full transition-all duration-300 text-sm ${isScrolled
-                    ? 'text-foreground hover:bg-primary/10 hover:text-primary'
-                    : 'text-white hover:bg-white/20'
-                  }`}
+                className="font-semibold px-4 py-2 rounded-full transition-all duration-300 text-sm text-foreground hover:bg-primary/10 hover:text-primary"
               >
                 {item}
               </Link>
@@ -78,10 +74,10 @@ export default function Header() {
           </nav>
 
           {/* Mobile menu button */}
-          <button onClick={toggleMenu} className="lg:hidden p-2 rounded-full hover:bg-white/10 transition-colors">
+          <button onClick={toggleMenu} className="lg:hidden p-2 rounded-full hover:bg-primary/10 transition-colors">
             {isOpen ?
-              <X size={28} className={isScrolled ? "text-primary" : "text-white"} /> :
-              <Menu size={28} className={isScrolled ? "text-primary" : "text-white"} />
+              <X size={28} className="text-primary" /> :
+              <Menu size={28} className="text-primary" />
             }
           </button>
         </div>
@@ -89,7 +85,7 @@ export default function Header() {
         {/* Mobile Navigation */}
         {isOpen && (
           <nav
-            className="lg:hidden mt-4 pb-6 flex flex-col gap-3 glass rounded-2xl p-4 animate-in slide-in-from-top-4 fade-in duration-300"
+            className="lg:hidden mt-4 pb-6 flex flex-col gap-3 glass rounded-2xl p-4 animate-in slide-in-from-top-4 fade-in duration-300 border-t border-primary/10"
           >
             {['About', 'Programs', 'Activities', 'Gallery', 'Contact'].map((item) => (
               <Link
