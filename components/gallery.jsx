@@ -5,37 +5,59 @@ import { X, ZoomIn } from "lucide-react"
 
 export default function Gallery() {
   const [selectedImage, setSelectedImage] = useState(null)
+  const [activeTab, setActiveTab] = useState("AISSE 2025")
 
   const galleryImages = [
-    { title: "School Moments", image: "/abs/WhatsApp Image 2026-01-13 at 12.33.24 PM.jpeg" },
-    { title: "Campus Life", image: "/abs/WhatsApp Image 2026-01-13 at 12.39.52 PM.jpeg" },
-    { title: "Student Activities", image: "/abs/WhatsApp Image 2026-01-13 at 12.39.53 PM.jpeg" },
-    { title: "Learning Fun", image: "/abs/WhatsApp Image 2026-01-13 at 12.39.54 PM.jpeg" },
-    { title: "Creative Art", image: "/abs/WhatsApp Image 2026-01-13 at 12.39.55 PM (1).jpeg" },
-    { title: "Sports Day", image: "/abs/WhatsApp Image 2026-01-13 at 12.39.55 PM.jpeg" },
-    { title: "Group Activities", image: "/abs/WhatsApp Image 2026-01-13 at 12.39.56 PM (1).jpeg" },
-    { title: "Classroom", image: "/abs/WhatsApp Image 2026-01-13 at 12.39.56 PM.jpeg" },
-    { title: "Outdoor Fun", image: "/abs/WhatsApp Image 2026-01-13 at 12.39.57 PM (1).jpeg" },
-    { title: "Events", image: "/abs/WhatsApp Image 2026-01-13 at 12.39.57 PM.jpeg" },
-    { title: "Achievements", image: "/abs/WhatsApp Image 2026-01-13 at 12.41.25 PM (1).jpeg" },
-    { title: "Celebrations", image: "/abs/WhatsApp Image 2026-01-13 at 12.41.25 PM.jpeg" },
+    // 2025 Images
+    { title: "School Moments", category: "AISSE 2025", image: "/abs/WhatsApp Image 2026-01-13 at 12.33.24 PM.jpeg" },
+    { title: "Campus Life", category: "AISSE 2025", image: "/abs/WhatsApp Image 2026-01-13 at 12.39.52 PM.jpeg" },
+    { title: "Student Activities", category: "AISSE 2025", image: "/abs/WhatsApp Image 2026-01-13 at 12.39.53 PM.jpeg" },
+    { title: "Learning Fun", category: "AISSE 2025", image: "/abs/WhatsApp Image 2026-01-13 at 12.39.54 PM.jpeg" },
+    { title: "Creative Art", category: "AISSE 2025", image: "/abs/WhatsApp Image 2026-01-13 at 12.39.55 PM (1).jpeg" },
+    { title: "Sports Day", category: "AISSE 2025", image: "/abs/WhatsApp Image 2026-01-13 at 12.39.55 PM.jpeg" },
+
+    // 2022 Images
+    { title: "Group Activities", category: "AISSE 2022", image: "/abs/WhatsApp Image 2026-01-13 at 12.39.56 PM (1).jpeg" },
+    { title: "Classroom", category: "AISSE 2022", image: "/abs/WhatsApp Image 2026-01-13 at 12.39.56 PM.jpeg" },
+    { title: "Outdoor Fun", category: "AISSE 2022", image: "/abs/WhatsApp Image 2026-01-13 at 12.39.57 PM (1).jpeg" },
+    { title: "Events", category: "AISSE 2022", image: "/abs/WhatsApp Image 2026-01-13 at 12.39.57 PM.jpeg" },
+    { title: "Achievements", category: "AISSE 2022", image: "/abs/WhatsApp Image 2026-01-13 at 12.41.25 PM (1).jpeg" },
+    { title: "Celebrations", category: "AISSE 2022", image: "/abs/WhatsApp Image 2026-01-13 at 12.41.25 PM.jpeg" },
   ]
+
+  const filteredImages = galleryImages.filter(img => img.category === activeTab)
 
   return (
     <section className="py-24 bg-white relative">
       <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-slate-50 to-white"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <span className="text-secondary font-bold tracking-wider uppercase text-sm mb-2 block">Our Memories</span>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Moments at Sant Paul High School</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
             Glimpses of life, learning, and joy at our campus.
           </p>
+
+          {/* Tabs */}
+          <div className="flex justify-center gap-4 mb-8">
+            {["AISSE 2025", "AISSE 2022"].map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${activeTab === tab
+                    ? "bg-secondary text-white shadow-lg scale-105"
+                    : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                  }`}
+              >
+                {tab}
+              </button>
+            ))}
+          </div>
         </div>
 
         <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
-          {galleryImages.map((item, idx) => (
+          {filteredImages.map((item, idx) => (
             <div
               key={idx}
               className="group break-inside-avoid relative rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 cursor-zoom-in"
@@ -76,6 +98,7 @@ export default function Gallery() {
             />
             <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white rounded-b-lg">
               <h3 className="text-xl font-bold">{selectedImage.title}</h3>
+              <span className="text-sm text-white/80">{selectedImage.category}</span>
             </div>
           </div>
         </div>

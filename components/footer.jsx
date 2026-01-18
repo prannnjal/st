@@ -111,7 +111,7 @@ export default function Footer() {
                   <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center group-hover:bg-secondary/80 transition-colors">
                     <span>📧</span>
                   </div>
-                  <span className="mt-1">info@stpaul.com</span>
+                  <span className="mt-1">STPAULSPATEPUR@GMAIL.COM</span>
                 </a>
               </li>
               <li>
@@ -121,7 +121,7 @@ export default function Footer() {
                   </div>
                   <div className="mt-1">
                     <p>+91 7634050751</p>
-                    <p className="text-sm text-white/50">+91 7634050752/3/4/5</p>
+                    <p className="text-sm text-white/50">+91 7634050752/53/54/58</p>
                   </div>
                 </a>
               </li>
@@ -131,7 +131,7 @@ export default function Footer() {
                 </div>
                 <div className="mt-1">
                   <p>Near S.R.C High School</p>
-                  <p>Patepur(Vaishali)</p>
+                  <p>Patepur(Vaishali) 843114</p>
                 </div>
               </li>
             </ul>

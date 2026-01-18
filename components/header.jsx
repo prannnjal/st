@@ -37,10 +37,11 @@ export default function Header() {
             </div>
             <div>
               <h1 className="text-2xl font-bold drop-shadow-sm transition-colors duration-300 text-primary">
-                Sant Paul High School
+                St.Paul High School
               </h1>
               <p className="text-xs font-semibold tracking-wider uppercase transition-colors duration-300 text-primary/80">
-                Learn • Play • Grow
+
+                EXCEEDING EXPECTATIONS OF EXCELLENCE
               </p>
             </div>
           </Link>
