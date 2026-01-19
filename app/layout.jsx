@@ -6,10 +6,10 @@ const geist = Geist({ subsets: ["latin"] })
 const geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata = {
-  title: "Sant Paul High School - Excellence in Education (Playgroup to High School)",
+  title: "St. Paul High School - Excellence in Education (Playgroup to High School)",
   description:
-    "Sant Paul High School provides world-class education with a focus on holistic development, academic excellence, and character building. Offering state-of-the-art facilities from Pre-Primary to High School levels.",
-  keywords: "Sant Paul High School, school, education, high school, matriculation, boarding, hostel, best school, Patepur, Vaishali",
+    "St. Paul High School provides world-class education with a focus on holistic development, academic excellence, and character building. Offering state-of-the-art facilities from Pre-Primary to High School levels.",
+  keywords: "St. Paul High School, school, education, high school, matriculation, boarding, hostel, best school, Patepur, Vaishali",
   icons: {
     icon: "/abs/favicon.ico",
     shortcut: "/abs/favicon.ico",

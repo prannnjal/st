@@ -52,7 +52,7 @@ export default function About() {
         <div className="text-center mb-16">
           <span className="text-accent font-bold tracking-wider uppercase text-sm mb-2 block">Our Vision</span>
           <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-600 mb-6">
-            Why Choose Sant Paul High School?
+            Why Choose St. Paul High School?
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto font-medium leading-relaxed">
             We make learning fun, safe, and enriching for every child, fostering a love for knowledge that lasts a lifetime.
@@ -67,7 +67,7 @@ export default function About() {
                 Your Child's Future <span className="text-secondary">Starts Here</span>
               </h2>
               <p className="text-gray-600 text-lg leading-relaxed">
-                Sant Paul High School is a premier educational institution dedicated to providing exceptional learning
+                St. Paul High School is a premier educational institution dedicated to providing exceptional learning
                 experiences. We believe in nurturing young minds with a perfect blend of academics, sports, arts, and life skills.
               </p>
               <p className="text-gray-600 text-lg leading-relaxed">

@@ -31,7 +31,7 @@ export default function Header() {
               <div className="absolute inset-0 bg-primary/5 blur-xl rounded-full group-hover:bg-primary/10 transition-all"></div>
               <img
                 src="/abs/logo.jpg"
-                alt="Sant Paul High School Logo"
+                alt="St. Paul High School Logo"
                 className="h-16 w-auto object-contain relative z-10 drop-shadow-md"
               />
             </div>

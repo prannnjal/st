@@ -39,11 +39,11 @@ export default function Footer() {
               <div className="bg-white p-2 rounded-xl shadow-md">
                 <img
                   src="/abs/logo.jpg"
-                  alt="Sant Paul High School Logo"
+                  alt="St. Paul High School Logo"
                   className="h-12 w-auto object-contain"
                 />
               </div>
-              <h3 className="text-xl font-bold leading-tight">Sant Paul<br />High School</h3>
+              <h3 className="text-xl font-bold leading-tight">St. Paul<br />High School</h3>
             </div>
             <p className="text-white/80 leading-relaxed mb-6 font-medium">
               Nurturing young minds with a perfect blend of academics, creativity, and values. Providing a safe haven for your child's growth. 🌟
@@ -140,7 +140,7 @@ export default function Footer() {
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/60">
           <p>
-            © {currentYear} Sant Paul High School. All rights reserved.
+            © {currentYear} St. Paul High School. All rights reserved.
           </p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
