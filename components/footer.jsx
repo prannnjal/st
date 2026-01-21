@@ -120,8 +120,8 @@ export default function Footer() {
                     <span>📞</span>
                   </div>
                   <div className="mt-1">
-                    <p>+91 7634050751</p>
-                    <p className="text-sm text-white/50">+91 7634050752/53/54/58</p>
+                    <p>+91 7634050751/53/54/58</p>
+
                   </div>
                 </a>
               </li>
